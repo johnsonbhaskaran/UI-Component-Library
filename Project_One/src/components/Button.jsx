@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const Button = ({ label, backgroundColor = "red", size = "md", onClick }) => {
   let scale = 1;
   if (size === "sm") scale = 0.75;
@@ -15,3 +17,10 @@ const Button = ({ label, backgroundColor = "red", size = "md", onClick }) => {
   );
 };
 export default Button;
+
+Button.propTypes = {
+  label: PropTypes.string.isRequired,
+  backgroundColor: PropTypes.string,
+  size: PropTypes.oneOf(["sm", "md", "lg"]),
+  onClick: PropTypes.func,
+};
